@@ -1,5 +1,418 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 45px;
+    font-weight: 600;
+    letter-spacing: -2px;
+    color: black;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 42px;
+    text-transform: uppercase;
+    letter-spacing: 6.55px;
+    color: black;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+    height: 100vh;
+    max-width: 1440px;
+    max-height: 800px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    color: hsl(0, 0%, 63%);
+    font-family: "League Spartan", serif;
+}
+
+body>div {
+    margin: 0px;
+    padding: 0px;
+}
+
+nav,
+nav ul {
+    display: inline-flex;
+    justify-content: space-around;
+    height: 40px;
+}
+
+nav {
+    margin-top: 50px;
+    margin-left: 64px;
+    width: 380px;
+    color: white;
+    position: relative;
+    text-transform: lowercase;
+    justify-content: space-between;
+}
+
+nav ul {
+    width: 280px;
+    justify-content: space-between;
+}
+
+nav img {
+    height: 14px;
+    margin-right: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.underline {
+    height: 16px;
+    width: 16px;
+    background-color: white;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+    position: relative;
+    margin: auto;
+}
+
+li:after {
+    content: "";
+    position: absolute;
+    margin-left: 25%;
+    margin-bottom: 25%;
+    left: 0;
+    top: 125%;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width .3s ease-in-out;
+}
+
+li:hover:after {
+    width: 50%;
+}
+
+.mobile,
+input[type="checkbox"] {
+    display: none;
+}
+
+
+#carousel {
+    width: 100vw;
+    height: 66.75vh;
+    max-height: 532px;
+    position: relative;
+    display: flex;
+}
+
+#imageContainer {
+    width: 58.33%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#superContainer {
+    width: 58.33%;
+    height: 100%;
+    position: absolute;
+    display: inline-flex;
+    overflow: hidden;
+}
+
+.image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+}
+
+.image:nth-child(n) {
+    z-index: -1;
+}
+
+.image:first-child {
+    z-index: 0;
+}
+
+
+#navButtons {
+    position: relative;
+    text-align: right;
+    display: inline-flex;
+    justify-content: flex-end;
+    height: 80px;
+    right: -19.04%;
+    z-index: 1;
+}
+
+button {
+    height: 100%;
+    width: 9.52%;
+    background-color: black;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 0px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 27%);
+}
+
+#leftArrow {
+    background-image: url(../images/icon-angle-left.svg);
+}
+
+#rightArrow {
+    background-image: url(../images/icon-angle-right.svg);
+}
+
+#descriptionContainer {
+    width: 41.67%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#descriptions {
+    height: 43.2%;
+    margin-top: 19.25%;
+    width: 100%;
+    position: relative;
+    display: inline-flex;
+    overflow: hidden;
+}
+
+.desc {
+    background-color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 66.803%;
+    padding-left: 16.66%;
+    padding-right: 16.737%;
+    height: 100%;
+    justify-content: space-around;
+    transition: transform 0.5s;
+}
+
+.desc:nth-child(n) {
+    z-index: -1;
+}
+
+.desc:first-child {
+    z-index: 0;
+    opacity: 1;
+}
+
+#shop {
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    letter-spacing: 12.5px;
+    font-weight: 600;
+    padding-left: 16.67%;
+    line-height: 55px;
+}
+
+#shop:hover {
+    color: hsl(0, 0%, 63%);
+}
+
+#shop:hover img {
+    filter: brightness(0) saturate(100%) invert(69%) sepia(0%) saturate(284%) hue-rotate(66deg) brightness(94%) contrast(91%);
+}
+
+
+#footer {
+    width: 100vw;
+    height: 33.25vh;
+    max-height: 268px;
+    display: inline-flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+#footerLeftImage {
+    background-image: url(../images/image-about-dark.jpg);
+    background-size: cover;
+}
+
+#footerRightImage {
+    background-image: url(../images/image-about-light.jpg);
+    background-size: cover;
+}
+
+#footerDesc {
+    width: auto;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+@media(max-width: 767px) {
+    #carousel {
+        flex-direction: column;
+        height: auto;
+        overflow: hidden;
+    }
+
+    h1 {
+        font-size: 40px;
+        line-height: 36px;
+    }
+
+    h2 {
+        font-size: 12px;
+    }
+
+    button {
+        height: 56px;
+        width: 56px;
+    }
+
+    #footer {
+        flex-direction: column;
+    }
+
+    .mobile {
+        display: flex;
+        width: 17.5%;
+        flex-shrink: 1;
+    }
+
+    #humbergerMenu {
+        margin: auto;
+    }
+
+    #logo {
+        display: flex;
+        margin-right: 42.5%;
+    }
+
+    nav {
+        margin: 0;
+        width: 100%;
+        height: 110px;
+        display: flex;
+    }
+
+    nav ul {
+        position: absolute;
+        top: -100%;
+        height: 110px;
+        width: 78%;
+        padding-left: 22%;
+        transition: top 0.3s;
+        background-color: white;
+    }
+
+    li a {
+        color: black;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    .toggle:checked~ul {
+        top: 0%;
+    }
+
+    .toggle:checked~label img {
+        content: url("../images/icon-close.svg");
+        z-index: 2;
+    }
+
+    #imageContainer,
+    #superContainer,
+    #descriptionContainer,
+    .footerImages,
+    #footerDesc {
+        width: 100%;
+    }
+
+    #imageContainer {
+        height: 365px;
+    }
+
+    #superContainer {
+        height: 365px;
+    }
+
+    #descriptionContainer {
+        height: 410px;
+    }
+
+    #descriptions {
+        margin-top: 15%;
+        height: 230px;
+    }
+
+    .desc {
+        padding-left: 8.5%;
+        padding-right: 8.5%;
+        width: 83%;
+    }
+
+    #shop {
+        padding-left: 8.5%;
+        line-height: 85px;
+    }
+
+    #image-0 {
+        content: url("../images/mobile-image-hero-1.jpg");
+    }
+
+    #image-1 {
+        content: url("../images/mobile-image-hero-2.jpg");
+    }
+
+    #image-2 {
+        content: url("../images/mobile-image-hero-3.jpg");
+    }
+
+    #navButtons {
+        right: 0;
+        height: 56px;
+    }
+
+    #footer {
+        min-height: 765px;
+    }
+
+    .footerImages {
+        width: 100vw;
+        height: auto;
+    }
+
+    #footerDesc {
+        padding-left: 8.5%;
+        padding-right: 8.5%;
+        width: 83%;
+        margin: 0;
+    }
 }
